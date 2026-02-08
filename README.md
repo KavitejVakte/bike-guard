@@ -1,75 +1,58 @@
-# BikeGuard Web App
+# Bike Guard
 
-Full-stack BikeGuard demo with a polished frontend and a Node/Express backend.
+Bike Guard is a web-based platform focused on improving motorcycle safety through
+a modern, performance-oriented digital experience.  
+The project emphasizes clean UI/UX, smooth animations, and a scalable structure
+ready for future backend and IoT integrations.
 
-## Setup
+🌐 Live Demo: https://bike-guard.vercel.app/
 
-1. Install dependencies:
-   - `npm install`
-2. Copy env:
-   - `cp .env.example .env`
-3. Start server:
-   - `npm run dev`
+---
 
-Open `http://localhost:3000`.
+## Overview
 
-## Demo login
+Motorcycle riders often lack the level of safety systems available in cars.
+Bike Guard aims to bridge this gap by providing a digital foundation for
+bike safety awareness, product showcasing, and future smart-safety features.
 
-- Email: `demo@bikeguard.app`
-- Password: `demo1234` (or `DEMO_PASSWORD` from `.env`)
+---
 
-## Login email alerts (Gmail)
+## Key Features
 
-On every successful login, an email is sent to the owner.
+- Modern, responsive user interface
+- High-performance animations and smooth interactions
+- Mobile-first and cross-browser compatible
+- Clean and maintainable code structure
+- Secure and fast deployment using Vercel
+- Scalable architecture for future enhancements
 
-Update `.env`:
-- `OWNER_EMAIL` = address to receive alerts
-- `SMTP_USER` = Gmail address used to send
-- `SMTP_PASS` = Gmail App Password (not your normal password)
-- `ADMIN_EMAILS` = comma-separated list of admin emails
+---
 
-## Google Maps
+## Technology Stack
 
-Add your API key in `app.js` by setting `window.GOOGLE_MAPS_API_KEY` before the app loads.
-Example (top of `app.js`):
+### Frontend
+- HTML5
+- CSS3
+- JavaScript (ES6+)
 
-```js
-window.GOOGLE_MAPS_API_KEY = 'YOUR_KEY'
-```
+### Backend
+- Node.js (optional / extensible)
+- Serverless API routes (Vercel-compatible)
 
-## Features
+### Deployment
+- Vercel (CI/CD with GitHub integration)
 
-- Profile page (name, phone, medical info, emergency contacts)
-- Ride tracking start/stop with live timer
-- Edit/update rides and issues
-- Email alerts on login, SOS, and issue updates
-- Export rides/issues CSV and summary PDF
-- Admin dashboard (users + SOS events)
- - Single-page UI with landing, auth, dashboard, and admin views
+---
 
-## Deployment (GitHub)
+## Project Structure
 
-1. Initialize git and push to GitHub:
-   - `git init`
-   - `git add .`
-   - `git commit -m "BikeGuard backend"`
-   - `git remote add origin <your-repo-url>`
-   - `git push -u origin main`
-2. Run in production by cloning the repo and starting:
-   - `npm install`
-   - `npm run dev` (or `npm start`)
-
-If you want a hosted deployment with HTTPS and a managed database, tell me and I’ll migrate the DB and provide a Render/Railway setup.
-## API (summary)
-
-- `POST /api/auth/signup`
-- `POST /api/auth/login`
-- `GET /api/me`
-- `GET /api/dashboard`
-- `GET /api/rides`
-- `POST /api/rides`
-- `GET /api/issues`
-- `POST /api/issues`
-- `GET /api/contacts`
-- `POST /api/contacts`
-- `POST /api/sos`
+bike-guard/
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+│ ├── images/
+│ └── icons/
+├── api/ # Serverless functions (if applicable)
+├── .gitignore
+└── README.md
