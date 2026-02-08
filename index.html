@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BikeGuard - Rider Safety & Assistance</title>
+    <meta
+      name="description"
+      content="A premium safety platform for bike riders with SOS, ride intelligence, and real-time safety coverage."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <div class="bg-grid"></div>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <header class="topbar" id="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <p class="brand-title">BikeGuard</p>
+          <p class="brand-subtitle">Safety & Assistance</p>
+        </div>
+      </div>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navPanel"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-panel" id="navPanel">
+        <nav class="nav-links">
+          <a href="#landing">Landing</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#profile">Profile</a>
+          <a href="#sos">SOS</a>
+          <a href="#rides">Ride History</a>
+          <a href="#issues">Bike Issues</a>
+          <a href="#admin" id="admin-link" style="display: none;">Admin</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn ghost" data-view="login">Login</button>
+          <button class="btn primary" data-view="signup">Get Started</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="app">
+      <section id="landing" class="page active">
+        <div class="hero">
+          <div class="hero-copy reveal">
+            <span class="pill">Superbike Safety Command</span>
+            <h1>
+              Ride like a machine. Protected like a fortress.
+              <span class="accent">Built for elite riders.</span>
+            </h1>
+            <p class="muted">
+              BikeGuard merges live safety intelligence, rapid response, and performance analytics into a
+              single cockpit. Precision engineering for riders who demand the absolute best.
+            </p>
+            <div class="hero-actions">
+              <button class="btn primary magnetic" data-view="signup">Activate Safety Shield</button>
+              <button class="btn ghost magnetic" data-view="dashboard">View Live Dashboard</button>
+            </div>
+            <div class="hero-metrics">
+              <div>
+                <h3>24/7</h3>
+                <p>Emergency readiness</p>
+              </div>
+              <div>
+                <h3>98%</h3>
+                <p>Rider confidence</p>
+              </div>
+              <div>
+                <h3>12k+</h3>
+                <p>Incidents avoided</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card reveal" data-tilt>
+            <div class="hero-card-header">
+              <div>
+                <p class="label">Live Safety Snapshot</p>
+                <h2>Midnight Loop · 14.2 km</h2>
+              </div>
+              <span class="status">Active</span>
+            </div>
+            <div class="hero-card-grid">
+              <div class="metric-card" data-tilt>
+                <p class="label">Safety score</p>
+                <h3>92</h3>
+                <span class="chip">+4 this week</span>
+              </div>
+              <div class="metric-card" data-tilt>
+                <p class="label">Coverage</p>
+                <h3>3 contacts</h3>
+                <span class="chip">Alert-ready</span>
+              </div>
+              <div class="metric-card" data-tilt>
+                <p class="label">Visibility</p>
+                <h3>High</h3>
+                <span class="chip">Low risk</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card reveal" data-tilt>
+            <h3>Real-time Safety Shield</h3>
+            <p>Automatic monitoring for night rides, hazard zones, and sudden stops with instant alerts.</p>
+          </div>
+          <div class="feature-card reveal" data-tilt>
+            <h3>SOS Response Network</h3>
+            <p>One tap escalation to emergency contacts with live location broadcast and ride context.</p>
+          </div>
+          <div class="feature-card reveal" data-tilt>
+            <h3>Ride Intelligence</h3>
+            <p>Track safety scores, ride history, and maintenance signals to keep your bike prepared.</p>
+          </div>
+        </div>
+
+        <div class="testimonial" id="testimonials">
+          <div class="testimonial-header">
+            <h2>Rider Testimonials</h2>
+            <p class="muted">Proof that precision safety changes everything.</p>
+          </div>
+          <div class="testimonial-track" id="testimonialTrack">
+            <div class="testimonial-card">
+              <p>“BikeGuard feels like ABS for your entire ride. I won’t go out without it.”</p>
+              <span>— Aria V, Track Rider</span>
+            </div>
+            <div class="testimonial-card">
+              <p>“The SOS workflow is instant. My crew gets alerts before I even stop.”</p>
+              <span>— Mika L, Night Commuter</span>
+            </div>
+            <div class="testimonial-card">
+              <p>“Analytics keep my bike dialed in. It’s like a pit crew in your pocket.”</p>
+              <span>— Jonas R, Touring Lead</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="login" class="page">
+        <div class="auth-card reveal">
+          <h2>Welcome back</h2>
+          <p class="muted">Log in to monitor your rider safety dashboard.</p>
+          <form class="form" data-form="login">
+            <label class="form-field">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@ride.com" required />
+            </label>
+            <label class="form-field">
+              <span>Password</span>
+              <input type="password" name="password" placeholder="••••••••" required />
+            </label>
+            <div class="form-actions">
+              <button class="btn primary magnetic" type="submit">Login</button>
+              <button class="link" data-view="signup" type="button">Create account</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="signup" class="page">
+        <div class="auth-card reveal">
+          <h2>Create your safety profile</h2>
+          <p class="muted">Activate your rider dashboard and emergency coverage.</p>
+          <form class="form" data-form="signup">
+            <label class="form-field">
+              <span>Full name</span>
+              <input type="text" name="name" placeholder="Ari Novak" required />
+            </label>
+            <label class="form-field">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@ride.com" required />
+            </label>
+            <label class="form-field">
+              <span>Password</span>
+              <input type="password" name="password" placeholder="Create a strong password" required />
+            </label>
+            <label class="form-field">
+              <span>Emergency contacts</span>
+              <input
+                type="text"
+                name="contacts"
+                placeholder="Sam: +1-555-200-1010, Care: +1-555-200-2020"
+              />
+            </label>
+            <div class="form-actions">
+              <button class="btn primary magnetic" type="submit">Create account</button>
+              <button class="link" data-view="login" type="button">Already have an account?</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="dashboard" class="page">
+        <div class="dashboard">
+          <aside class="sidebar reveal">
+            <div class="brand compact">
+              <div class="logo"></div>
+              <div>
+                <p class="brand-title">BikeGuard</p>
+                <p class="brand-subtitle">Safety</p>
+              </div>
+            </div>
+            <nav class="sidebar-nav">
+              <button class="nav-button active" data-view="dashboard">Overview</button>
+              <button class="nav-button" data-view="profile">Profile</button>
+              <button class="nav-button" data-view="sos">Emergency SOS</button>
+              <button class="nav-button" data-view="rides">Ride History</button>
+              <button class="nav-button" data-view="issues">Bike Issues</button>
+              <button class="nav-button" data-view="admin" id="admin-button" style="display: none;">
+                Admin
+              </button>
+            </nav>
+            <div class="sidebar-card">
+              <p>Need help? Reach the safety desk 24/7 from the SOS page.</p>
+            </div>
+          </aside>
+          <div class="dashboard-main">
+            <div class="dashboard-top reveal">
+              <div>
+                <p class="muted">Welcome back</p>
+                <h2>Rider Nova</h2>
+              </div>
+              <div class="dashboard-actions">
+                <span class="status-pill">Active safety shield</span>
+                <button class="btn ghost">Sign out</button>
+              </div>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-card reveal" data-count="128">
+                <p class="label">Total rides</p>
+                <h3 class="count">128</h3>
+                <span class="chip">845 km</span>
+              </div>
+              <div class="stat-card reveal" data-count="46">
+                <p class="label">Night rides</p>
+                <h3 class="count">46</h3>
+                <span class="chip">36% night share</span>
+              </div>
+              <div class="stat-card reveal" data-count="2">
+                <p class="label">Emergency count</p>
+                <h3 class="count">2</h3>
+                <span class="chip">Low risk</span>
+              </div>
+              <div class="stat-card reveal" data-count="92">
+                <p class="label">Safety score</p>
+                <h3 class="count">92</h3>
+                <span class="chip">+4 this week</span>
+              </div>
+            </div>
+
+            <div class="dashboard-grid">
+              <div class="panel reveal" data-tilt>
+                <div class="panel-header">
+                  <h3>Recent rides</h3>
+                </div>
+                <div class="list">
+                  <div class="list-item">
+                    <div>
+                      <p>Midnight Loop</p>
+                      <span class="muted">28 min · 14.2 km</span>
+                    </div>
+                    <span class="chip">Night ride</span>
+                  </div>
+                  <div class="list-item">
+                    <div>
+                      <p>Coastal Glide</p>
+                      <span class="muted">41 min · 22.8 km</span>
+                    </div>
+                    <span class="chip">Day ride</span>
+                  </div>
+                  <div class="list-item">
+                    <div>
+                      <p>City Loop</p>
+                      <span class="muted">36 min · 18.7 km</span>
+                    </div>
+                    <span class="chip">Day ride</span>
+                  </div>
+                </div>
+              </div>
+              <div class="panel reveal" data-tilt>
+                <div class="panel-header">
+                  <h3>Safety readiness</h3>
+                </div>
+                <div class="list">
+                  <div class="list-item">
+                    <div>
+                      <p>Helmet detected</p>
+                      <span class="muted">Bluetooth enabled, verified</span>
+                    </div>
+                    <span class="chip">Ready</span>
+                  </div>
+                  <div class="list-item">
+                    <div>
+                      <p>Headlight intensity</p>
+                      <span class="muted">85% lumen output</span>
+                    </div>
+                    <span class="chip">Stable</span>
+                  </div>
+                  <div class="list-item">
+                    <div>
+                      <p>Road risk level</p>
+                      <span class="muted">2 hazard zones nearby</span>
+                    </div>
+                    <span class="chip">Monitor</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel reveal" data-tilt>
+              <div class="panel-header">
+                <h3>Live Ride Tracker</h3>
+              </div>
+              <div class="tracker">
+                <div>
+                  <p class="muted">Active ride</p>
+                  <h3 id="ride-timer">00:00:00</h3>
+                  <p id="ride-name" class="muted">No ride active</p>
+                </div>
+                <div class="tracker-actions">
+                  <input
+                    type="text"
+                    id="ride-name-input"
+                    placeholder="Ride name"
+                    class="tracker-input"
+                  />
+                  <button class="btn primary magnetic" id="start-ride">Start ride</button>
+                  <button class="btn ghost magnetic" id="stop-ride" disabled>Stop ride</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="profile" class="page">
+        <div class="panel reveal" data-tilt>
+          <div class="panel-header">
+            <h2>Your Profile</h2>
+          </div>
+          <form class="form" data-form="profile">
+            <label class="form-field">
+              <span>Full name</span>
+              <input type="text" name="name" placeholder="Ari Novak" required />
+            </label>
+            <label class="form-field">
+              <span>Email (read-only)</span>
+              <input type="email" name="email" disabled />
+            </label>
+            <label class="form-field">
+              <span>Phone</span>
+              <input type="text" name="phone" placeholder="+1-555-200-1010" />
+            </label>
+            <label class="form-field">
+              <span>Medical info</span>
+              <textarea name="medicalInfo" rows="3" placeholder="Allergies, blood type"></textarea>
+            </label>
+            <label class="form-field">
+              <span>Emergency contacts</span>
+              <input
+                type="text"
+                name="contacts"
+                placeholder="Sam: +1-555..., Care Team: +1-555..."
+              />
+            </label>
+            <button class="btn primary magnetic" type="submit">Save profile</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="sos" class="page">
+        <div class="panel reveal" data-tilt>
+          <div class="panel-header">
+            <div>
+              <h2>Emergency SOS</h2>
+              <p class="muted">Instantly alert emergency contacts with your live location.</p>
+            </div>
+            <button class="btn danger magnetic">Activate SOS</button>
+          </div>
+          <div class="sos-grid">
+            <div class="sos-card">
+              <h3>Emergency contacts</h3>
+              <ul>
+                <li>Sam Rodriguez · +1-555-222-9901</li>
+                <li>Care Team · +1-555-222-8834</li>
+                <li>City Safety Desk · +1-555-211-1010</li>
+              </ul>
+            </div>
+            <div class="sos-card">
+              <h3>Live location</h3>
+              <p class="muted">Last ping 18 seconds ago</p>
+              <div class="map" id="map"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rides" class="page">
+        <div class="panel reveal" data-tilt>
+          <div class="panel-header">
+            <h2>Ride History</h2>
+            <div class="panel-actions">
+              <button class="btn ghost magnetic" id="export-rides">Export rides CSV</button>
+              <button class="btn primary magnetic" data-modal="ride">Add ride</button>
+            </div>
+          </div>
+          <div class="table">
+            <div class="table-row header">
+              <span>Ride</span>
+              <span>Duration</span>
+              <span>Distance</span>
+              <span>Type</span>
+              <span>Safety score</span>
+              <span>Actions</span>
+            </div>
+            <div class="table-row">
+              <span>Midnight Loop</span>
+              <span>28 min</span>
+              <span>14.2 km</span>
+              <span class="chip">Night</span>
+              <span>91</span>
+              <span></span>
+            </div>
+            <div class="table-row">
+              <span>Coastal Glide</span>
+              <span>41 min</span>
+              <span>22.8 km</span>
+              <span class="chip">Day</span>
+              <span>95</span>
+              <span></span>
+            </div>
+            <div class="table-row">
+              <span>City Loop</span>
+              <span>36 min</span>
+              <span>18.7 km</span>
+              <span class="chip">Day</span>
+              <span>93</span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="issues" class="page">
+        <div class="panel reveal" data-tilt>
+          <div class="panel-header">
+            <h2>Bike Issue Log</h2>
+            <div class="panel-actions">
+              <button class="btn ghost magnetic" id="export-issues">Export issues CSV</button>
+              <button class="btn primary magnetic" data-modal="issue">Log new issue</button>
+            </div>
+          </div>
+          <div class="list">
+            <div class="list-item">
+              <div>
+                <p>Rear brake alignment</p>
+                <span class="muted">Logged 2 days ago · Priority: Medium</span>
+              </div>
+              <span class="chip">In review</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <p>Chain lubrication</p>
+                <span class="muted">Logged 4 days ago · Priority: Low</span>
+              </div>
+              <span class="chip">Resolved</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <p>Front light flicker</p>
+                <span class="muted">Logged 1 week ago · Priority: High</span>
+              </div>
+              <span class="chip">Monitoring</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="admin" class="page">
+        <div class="panel reveal" data-tilt>
+          <div class="panel-header">
+            <h2>Admin Dashboard</h2>
+            <div class="panel-actions">
+              <button class="btn ghost magnetic" id="admin-refresh">Refresh</button>
+              <button class="btn ghost magnetic" id="admin-export">Export summary PDF</button>
+            </div>
+          </div>
+          <div class="admin-grid">
+            <div class="panel">
+              <h3>Users</h3>
+              <div id="admin-users" class="list compact"></div>
+            </div>
+            <div class="panel">
+              <h3>SOS Events</h3>
+              <div id="admin-sos" class="list compact"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Developed by Kavitej Rohit Vakte</p>
+    </footer>
+
+    <div class="modal" id="issue-modal" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Log a bike issue</h3>
+          <button class="icon-button" data-modal-close>&times;</button>
+        </div>
+        <form class="form" data-form="issue">
+          <label class="form-field">
+            <span>Issue title</span>
+            <input type="text" name="title" placeholder="Brake noise, tire pressure" required />
+          </label>
+          <label class="form-field">
+            <span>Priority</span>
+            <select name="priority" required>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <span>Notes</span>
+            <textarea name="notes" rows="4" placeholder="Add details for the maintenance team"></textarea>
+          </label>
+          <button class="btn primary magnetic" type="submit">Save issue</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="ride-modal" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Add a ride</h3>
+          <button class="icon-button" data-modal-close>&times;</button>
+        </div>
+        <form class="form" data-form="ride">
+          <input type="hidden" name="rideId" />
+          <input type="hidden" name="mode" value="create" />
+          <label class="form-field">
+            <span>Ride name</span>
+            <input type="text" name="name" placeholder="City Loop" required />
+          </label>
+          <label class="form-field">
+            <span>Duration (minutes)</span>
+            <input type="number" name="durationMin" min="1" placeholder="35" required />
+          </label>
+          <label class="form-field">
+            <span>Distance (km)</span>
+            <input type="number" name="distanceKm" step="0.1" min="0" placeholder="18.7" required />
+          </label>
+          <label class="form-field">
+            <span>Type</span>
+            <select name="type" required>
+              <option>Day</option>
+              <option>Night</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <span>Safety score</span>
+            <input type="number" name="safetyScore" min="0" max="100" placeholder="92" required />
+          </label>
+          <button class="btn primary magnetic" type="submit">Save ride</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="issue-edit-modal" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Edit bike issue</h3>
+          <button class="icon-button" data-modal-close>&times;</button>
+        </div>
+        <form class="form" data-form="issue-edit">
+          <input type="hidden" name="issueId" />
+          <label class="form-field">
+            <span>Issue title</span>
+            <input type="text" name="title" placeholder="Brake noise" required />
+          </label>
+          <label class="form-field">
+            <span>Priority</span>
+            <select name="priority" required>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <span>Status</span>
+            <select name="status" required>
+              <option>In review</option>
+              <option>Monitoring</option>
+              <option>Resolved</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <span>Notes</span>
+            <textarea name="notes" rows="4" placeholder="Add details"></textarea>
+          </label>
+          <button class="btn primary magnetic" type="submit">Update issue</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="ride-stop-modal" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Finish ride</h3>
+          <button class="icon-button" data-modal-close>&times;</button>
+        </div>
+        <form class="form" data-form="ride-stop">
+          <label class="form-field">
+            <span>Distance (km)</span>
+            <input type="number" name="distanceKm" step="0.1" min="0" required />
+          </label>
+          <label class="form-field">
+            <span>Type</span>
+            <select name="type" required>
+              <option>Day</option>
+              <option>Night</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <span>Safety score</span>
+            <input type="number" name="safetyScore" min="0" max="100" required />
+          </label>
+          <button class="btn primary magnetic" type="submit">Save ride</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="env.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
