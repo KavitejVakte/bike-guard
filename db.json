@@ -1,0 +1,133 @@
+{
+  "users": [
+    {
+      "id": "5c340cd1-b9bd-4826-b411-dd878daaf952",
+      "name": "Rider Nova",
+      "email": "demo@bikeguard.app",
+      "passwordHash": "$2a$10$4QO9tPuh6s3etr/EYRaK3eG1qM5kQlOG1INpJhnr0453Bq9kMYyz.",
+      "contacts": [
+        {
+          "id": "040cb433-cc8e-40c4-b124-76ab29118ce5",
+          "name": "Sam Rodriguez",
+          "phone": "+1-555-222-9901"
+        },
+        {
+          "id": "f3a0ecf1-bf8f-45eb-9f58-4e97af223604",
+          "name": "Care Team",
+          "phone": "+1-555-222-8834"
+        },
+        {
+          "id": "a258188a-532b-4f51-b36b-36d7fa5f4c7b",
+          "name": "City Safety Desk",
+          "phone": "+1-555-211-1010"
+        }
+      ],
+      "createdAt": "2026-02-07T11:57:25.848Z"
+    },
+    {
+      "id": "3df48fd0-a1ae-409f-9c84-b5dcd28b11d2",
+      "name": "Kavitej Rohit Vakte",
+      "email": "kavitejvakte12@gmail.com",
+      "passwordHash": "$2a$10$RlOT0xgg5sTKl2KM3fugiefQMZhLe.ztroTd/eGhiF//1mXS1qESi",
+      "contacts": [
+        {
+          "name": "Contact 1",
+          "phone": "9834363338"
+        }
+      ],
+      "createdAt": "2026-02-07T12:29:47.021Z",
+      "activeRide": null
+    }
+  ],
+  "rides": [
+    {
+      "id": "a9aa02d0-0a5d-4625-86ea-d0e3fade8198",
+      "userId": "5c340cd1-b9bd-4826-b411-dd878daaf952",
+      "name": "City Loop",
+      "durationMin": 36,
+      "distanceKm": 18.7,
+      "type": "Day",
+      "safetyScore": 93,
+      "createdAt": "2026-02-05T19:57:25.848Z"
+    },
+    {
+      "id": "8edc5a66-3358-4fe1-9dc6-1c8fb9611ab9",
+      "userId": "5c340cd1-b9bd-4826-b411-dd878daaf952",
+      "name": "Nashik",
+      "durationMin": 20,
+      "distanceKm": 80,
+      "type": "Day",
+      "safetyScore": 88,
+      "createdAt": "2026-02-07T12:18:55.610Z"
+    },
+    {
+      "id": "c9dee6be-bf16-45fa-8c32-d35a8a8c4379",
+      "userId": "3df48fd0-a1ae-409f-9c84-b5dcd28b11d2",
+      "name": "Active Ride",
+      "durationMin": 32,
+      "distanceKm": 0.5,
+      "type": "Day",
+      "safetyScore": 4,
+      "createdAt": "2026-02-07T13:23:07.115Z"
+    }
+  ],
+  "issues": [
+    {
+      "id": "3a92afcb-bdea-4253-a227-6cff4ce617e1",
+      "userId": "5c340cd1-b9bd-4826-b411-dd878daaf952",
+      "title": "Rear brake alignment",
+      "priority": "Medium",
+      "notes": "",
+      "status": "In review",
+      "createdAt": "2026-02-05T11:57:25.848Z"
+    },
+    {
+      "id": "6c3e5f67-e793-4eb8-9036-1d37333ea7cd",
+      "userId": "5c340cd1-b9bd-4826-b411-dd878daaf952",
+      "title": "Chain lubrication",
+      "priority": "Low",
+      "notes": "",
+      "status": "Resolved",
+      "createdAt": "2026-02-03T11:57:25.848Z"
+    },
+    {
+      "id": "b4a1173e-33e2-42d0-954a-c643ff0b64b2",
+      "userId": "5c340cd1-b9bd-4826-b411-dd878daaf952",
+      "title": "Front light flicker",
+      "priority": "High",
+      "notes": "",
+      "status": "Monitoring",
+      "createdAt": "2026-01-31T11:57:25.848Z"
+    }
+  ],
+  "sosEvents": [
+    {
+      "id": "b20280e3-ec39-4964-b548-61359cb891ea",
+      "userId": "3df48fd0-a1ae-409f-9c84-b5dcd28b11d2",
+      "message": "SOS triggered from BikeGuard dashboard",
+      "location": "Downtown Grid · Sector 4",
+      "createdAt": "2026-02-07T12:47:24.054Z"
+    },
+    {
+      "id": "778f9c81-b8c4-4fd0-baeb-55f9d11aa736",
+      "userId": "3df48fd0-a1ae-409f-9c84-b5dcd28b11d2",
+      "message": "SOS triggered from BikeGuard dashboard",
+      "location": "Downtown Grid · Sector 4",
+      "createdAt": "2026-02-07T12:47:45.784Z"
+    },
+    {
+      "id": "8842398f-9854-4a78-a98b-2d5bd10e6a82",
+      "userId": "3df48fd0-a1ae-409f-9c84-b5dcd28b11d2",
+      "message": "SOS triggered from BikeGuard dashboard",
+      "location": "Downtown Grid · Sector 4",
+      "createdAt": "2026-02-07T12:48:08.222Z"
+    },
+    {
+      "id": "16d57ca0-3718-496a-bf4d-fba55a370e3c",
+      "userId": "3df48fd0-a1ae-409f-9c84-b5dcd28b11d2",
+      "message": "SOS triggered from BikeGuard dashboard",
+      "location": "Downtown Grid · Sector 4",
+      "createdAt": "2026-02-07T13:39:11.320Z"
+    }
+  ]
+}
