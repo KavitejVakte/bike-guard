@@ -1,6 +1,0 @@
-.env
-env.js
-node_modules
-data/db.json
-data/*.json
-*.log
